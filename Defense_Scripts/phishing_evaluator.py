@@ -1,5 +1,5 @@
 import pandas as pd
-from typing import Union, Dict
+from typing import Union, Dict, Optional
 from Defense_Scripts.test1 import predict_single_email as predict_model1
 from Defense_Scripts.test2 import predict_single_email as predict_model2
 from Defense_Scripts.ip_checker import VirusTotalIPChecker
@@ -16,8 +16,8 @@ class PhishingEvaluator:
         sender: str,
         body: str,
         header: Union[str, Dict, None],
-        ip: str | None,
-        targetemail: str | None
+        ip: Optional[str],
+        targetemail: Optional[str]
     ) -> dict:
 
         # Model predictions
