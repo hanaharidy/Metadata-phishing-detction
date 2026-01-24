@@ -1,0 +1,10 @@
+*.pkl filter=lfs diff=lfs merge=lfs -text
+*.pkl filter=lfs diff=lfs merge=lfs -text
+
+# Ensure Python files always use LF
+*.py text eol=lf
+
+# Optional: other text files
+*.txt text eol=lf
+*.md text eol=lf
+*.csv text eol=lf

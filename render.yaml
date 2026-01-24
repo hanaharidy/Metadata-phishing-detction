@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: phishing-detection-api
+    env: python
+    region: oregon # Change to your preferred region
+    plan: free # or starter/standard for production
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: API_KEY
+        generateValue: true # Render will generate a secure random key
+      - key: PYTHON_VERSION
+        value: 3.11.0
+    # Health check
+    healthCheckPath: /
